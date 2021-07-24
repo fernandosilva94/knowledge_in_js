@@ -18,10 +18,14 @@ botaoAdicionar.addEventListener("click", function(event) {
     tabela.appendChild(pacienteTr);
 
     form.reset();
+    limpaMsgErro = document.querySelector("#mensagens-erro")
+    limpaMsgErro.innerHTML = "";
 });
 
 function ExibeMsgErro(erros) {
     var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+
     erros.forEach(function(erro){
         var li = document.createElement("li");
         li.textContent = erro;
@@ -64,14 +68,22 @@ function montaTd(dadosPaciente, classeEscolhida) {
 
 function validaPaciente(paciente) {
     var erros = [];
-    //valida o peso
-    if (!validaPeso(paciente.peso)) {
-        erros.push("Peso inválido, tente novamente.");
+    
+    if (paciente.nome.length == 0) {
+        erros.push("Por favor, digite um nome.")
+    }
+
+    if (!validaPeso(paciente.peso) || paciente.peso.length == 0) {
+        erros.push("Peso inválido ou em branco, tente novamente.");
     }
 
     //valida a altura
-    if (!validaAltura(paciente.altura)) {
-        erros.push("Altura inválida, tente novamente.");
+    if (!validaAltura(paciente.altura) || paciente.altura.length == 0) {
+        erros.push("Altura inválida ou em branco, tente novamente.");
+    }
+
+    if (paciente.gordura.length == 0) {
+        erros.push("Preencha o campo com a porcentagem de gordura.")
     }
 
     return erros;
