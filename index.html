@@ -21,11 +21,13 @@
 		<section class="container">
 			<h2>Meus pacientes</h2>
 
-			<label for="filtrar-tabela">Filtrar aluno </label>
+			<label for="filtrar-tabela" class="lblFiltroAluno">Filtrar aluno:</label>
 			<input type="text" name="filtro" id="filtrar-tabela" placeholder="Digite um nome">
+			<p class="legenda">Para apagar alguma linha, dê 2 clicks sobre ela.</p>
 
 			<table>
 				<thead>
+					<div class="container-tbl">
 					<tr>
 						<th>Nome</th>
 						<th>Peso(kg)</th>
@@ -33,49 +35,20 @@
 						<th>Gordura Corporal(%)</th>
 						<th>IMC</th>
 					</tr>
+				</div>
 				</thead>
 				<tbody id="tabela-pacientes">
-					<tr class="paciente" id="primeiro-paciente">
-						<td class="info-nome" >Paulo</td>
-						<td class="info-peso">100</td>
-						<td class="info-altura">2.0</td>
-						<td class="info-gordura">10</td>
-						<td class="info-imc">0</td>
-					</tr>
-
-					<tr class="paciente">
-						<td class="info-nome">João</td>
-						<td class="info-peso">80</td>
-						<td class="info-altura">1.72</td>
-						<td class="info-gordura">40</td>
-						<td class="info-imc">0</td>
-					</tr>
-
-					<tr class="paciente">
-						<td class="info-nome">Erica</td>
-						<td class="info-peso">54</td>
-						<td class="info-altura">1.64</td>
-						<td class="info-gordura">14</td>
-						<td class="info-imc">0</td>
-					</tr>
-
-					<tr class="paciente">
-						<td class="info-nome">Douglas</td>
-						<td class="info-peso">85</td>
-						<td class="info-altura">1.73</td>
-						<td class="info-gordura">24</td>
-						<td class="info-imc">0</td>
-					</tr>
-					<tr class="paciente">
-						<td class="info-nome">Tatiana</td>
-						<td class="info-peso">46</td>
-						<td class="info-altura">2.55</td>
-						<td class="info-gordura">19</td>
-						<td class="info-imc">0</td>
+					<tr class="paciente" id="esconder">
+						<td class="info-nome" >teste</td>
+						<td class="info-peso">70</td>
+						<td class="info-altura">1.70</td>
+						<td class="info-gordura">20</td>
+						<td class="info-imc"></td>
 					</tr>
 				</tbody>
 			</table>
-
+			<span id="erro-ajax" class="invisivel">Erro de conexão ao buscar pacientes.</span>
+			<button id="buscar-pacientes" class="botao bto-principal">Buscar pacientes</button>
 		</section>
 	</main>
 
@@ -109,6 +82,7 @@
 	<script src="js/form.js"></script>
 	<script src="js/remover-paciente.js"></script>
 	<script src="js/filtra.js"></script>
+	<script src="js/buscar-paciente.js"></script>
 
 </body>
 

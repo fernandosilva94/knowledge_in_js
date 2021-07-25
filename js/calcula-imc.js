@@ -1,6 +1,3 @@
-/*var titulo = document.querySelector("h1");
-titulo.textContent = "Nutrição";
-*/
 var pacientes = document.querySelectorAll(".paciente");
 
 for (var varre = 0; varre < pacientes.length; varre++) {

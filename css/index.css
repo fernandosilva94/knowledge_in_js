@@ -150,10 +150,31 @@ button[disabled=disabled], button:disabled {
 
 #filtrar-tabela {
 	width: 200px;
-	height: 35px;
+	height: 24px;
 	margin-bottom: 10px;
 }
 
 .invisivel {
 	display: none;
+}
+#esconder {
+	display: none;
+}
+
+.mostra-pacientes {
+	transition: 5s;
+}
+
+.lblFiltroAluno {
+	display: inline-block;
+	font-weight: bold;
+    color: black
+}
+
+.container-tbl {
+	padding-top: 10px;
+}
+
+.legenda {
+	font-size: 12px;
 }
